@@ -18,7 +18,7 @@ public class PanelDeJuego extends JPanel implements Runnable{
 	//Configuracion de Pantalla
 	final int tamañoPixel = 16;
 	final int escala = 3; 
-	public int nivelActual = 2;
+	public int nivelActual = 1;
 	
 	public final int originalTamañoPixel = tamañoPixel * escala; //Seria de 48 pixeles
 	final int maximoColumna = 16;
@@ -166,21 +166,5 @@ public class PanelDeJuego extends JPanel implements Runnable{
 	    graficos2D.dispose();
 	}
 	
-	public void avanzarSiguienteNivel() {
-        nivelActual++; // Aumentamos 1 -> 2
-        
-        // 1. Cargamos el nuevo mapa de texto
-        // Nota: Tu clase Nivel1 debería tener el método cargarMapa público
-        nivel.cargarMapa("/mapa/nivel" + nivelActual + ".txt");
-        
-        // 2. Ponemos las frutas del nuevo nivel
-        setObjetos();
-        
-        // 3. Reiniciamos al jugador a la posición inicial
-        jugador.defaults();
-        
-        System.out.println("¡Bienvenido al Nivel " + nivelActual + "!");
-    }
-
 	
 }
